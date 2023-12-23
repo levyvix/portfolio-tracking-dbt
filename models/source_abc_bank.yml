@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: abc_bank
+    database: dbt-fundamentals-408315
+    schema: source_data
+    tables:
+      - name: abc_bank_position
