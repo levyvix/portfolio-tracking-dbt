@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: position_abc_bank
+    description: The positions we have in the ABC Bank Portfolio.
+    columns:
+      - name: unrealized_profit
+        description: The unrealized profit on the position
+        tests:
+          - not_null
+
+      - name: unrealized_profit_pct
+        description: The unrealized profit percentage on the position
+        tests:
+          - dbt_expectations.expect_column_values_to_not_be_null

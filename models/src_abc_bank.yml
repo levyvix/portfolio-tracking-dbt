@@ -1,0 +1,47 @@
+version: 2
+
+sources:
+  - name: abc_bank
+    database: dbt-fundamentals-408315
+    schema: source_data
+    tables:
+      - name: abc_bank_position
+        description: The landing table holding the data imported from the CSV extracted by abc bank.
+        columns:
+          - name: accountID
+            description: The code for the account at ABC Bank.
+            tests:
+              - not_null
+          - name: symbol
+            description: The symbol of the security at ABC Bank.
+            tests:
+              - unique
+              - not_null
+          - name: description
+            description: the name of the security at ABC Bank.
+            tests:
+              - not_null
+          - name: exchange
+            description: The short name or code of the exchange where the security is traded.
+            tests:
+              - not_null
+          - name: report_date
+            description: The date of the report was extracted by ABC Bank.  We consider this position to be the effective from this date forward, until a change is seen.
+            tests:
+              - not_null
+          - name: quantity
+            description: The number of securities we hold in the portfolio at ABC Bank at the Report Date
+            tests:
+              - not_null
+          - name: cost_base
+            description: The cost we paid for the securities that we hold in the portfolio at ABC Bank at the Report Date.
+            tests:
+              - not_null
+          - name: position_value
+            description: The value of the securities in the portfolio at ABC Bank on the Report Date.
+            tests:
+              - not_null
+          - name: currency
+            description: The currency for the monetary amounts of the position.
+            tests:
+              - not_null
