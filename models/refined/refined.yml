@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: position_abc_bank
+  - name: ref_position_abc_bank
     description: The positions we have in the ABC Bank Portfolio.
     columns:
       - name: unrealized_profit
