@@ -52,3 +52,11 @@ models:
 snapshots:
   my_new_project:
     +target_schema: snapshots
+
+
+seeds:
+  my_new_project:
+    +schema: seed_data
+    ABC_Bank_SECURITY_INFO:
+      +column_types:
+        LOAD_TS: TIMESTAMP
